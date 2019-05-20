@@ -1,0 +1,31 @@
+{
+  "version": "0.1.2",
+  "name": "@motif/client",
+  "author": {
+    "email": "me@progdesigner.com",
+    "name": "ProgDesigner"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/progdesigner/motif-client.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "qs": "^6.7.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "sass-loader": "^7.1.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
