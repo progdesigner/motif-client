@@ -1,5 +1,5 @@
 {
-  "version": "0.2.2",
+  "version": "0.2.3",
   "name": "@motif/client",
   "author": {
     "email": "me@progdesigner.com",
@@ -12,7 +12,6 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
-    "debug": "^4.1.1",
     "lodash": "^4.17.11",
     "qs": "^6.7.0"
   },
