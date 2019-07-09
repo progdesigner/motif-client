@@ -2,7 +2,7 @@
 'use strict'
 
 const _ = require('lodash')
-const debug = require('debug')('wni:interface')
+const debug = function() {}
 
 const InterfaceType = {
   Android: 'Android',
@@ -15,7 +15,8 @@ const InterfaceEvent = {
   Appear: 'appear-page',
   Disappear: 'disappear-page',
   Pause: 'pause-page',
-  Resume: 'resume-page'
+  Resume: 'resume-page',
+  RemoteNotification: "remote-notification"
 }
 
 const utils = {
@@ -282,11 +283,16 @@ class WNResponder {
     let info = JSON.parse(eventString)
     this.batch(InterfaceEvent.Resume, info)
   }
+
+  onRemoteNotification (eventString) {
+    let info = JSON.parse(eventString)
+    this.batch(InterfaceEvent.RemoteNotification, info)
+  }
 }
 
 class WNInterface {
   get version () {
-    return '0.4.5'
+    return '0.5.1'
   }
 
   get interfaceVersion() {
@@ -360,6 +366,10 @@ class WNInterface {
 
   onResume (callback) {
     this.on(InterfaceEvent.Resume, callback)
+  }
+
+  onRemoteNotification (callback) {
+    this.on(InterfaceEvent.RemoteNotification, callback)
   }
 }
 
